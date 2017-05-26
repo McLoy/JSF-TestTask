@@ -44,10 +44,4 @@ public class Role {
 	public void setUser(User user) {
 		this.user = user;
 	}
-
-//	public static void main(String[] args) {
-//		ApplicationContext ctx = new FileSystemXmlApplicationContext("/home/user/Dev/Java_projects/TestTasks/JSF/JSFEx/src/main/webapp/WEB-INF/spring-security.xml");
-////		UserDAO bean = ctx.getBean(UserDAO.class);
-//		System.out.println();
-//	}
 }

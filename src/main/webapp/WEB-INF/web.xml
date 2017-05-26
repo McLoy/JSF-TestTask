@@ -6,6 +6,10 @@
 	id="JSF_ID" version="2.4">
 	<display-name>JSF</display-name>
 
+	<welcome-file-list>
+		<welcome-file>faces/login.xhtml</welcome-file>
+	</welcome-file-list>
+
 	<servlet>
 		<servlet-name>JSF Servlet</servlet-name>
 		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
@@ -14,6 +18,14 @@
 	<servlet-mapping>
 		<servlet-name>JSF Servlet</servlet-name>
 		<url-pattern>*.xhtml</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JSF Servlet</servlet-name>
+		<url-pattern>/faces/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JSF Servlet</servlet-name>
+		<url-pattern>*.faces</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>JSF Servlet</servlet-name>

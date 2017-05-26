@@ -1,13 +1,13 @@
 package ua.vtkachenko.controller;
 
-import ua.vtkachenko.manager.UserManager;
-import ua.vtkachenko.model.UserModel;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.web.WebAttributes;
+import ua.vtkachenko.manager.UserManager;
+import ua.vtkachenko.model.UserModel;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.faces.event.PhaseEvent;
@@ -20,11 +20,25 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import java.io.IOException;
+import java.io.Serializable;
 
 @ManagedBean
-@RequestScoped
+@SessionScoped
+//@RequestScoped
 @Named
-public class UserController implements PhaseListener{
+public class UserController implements Serializable, PhaseListener{
+
+	private static final long serialVersionUID = 1L;
+
+	private String name;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	@Inject
 	public UserManager userManager;
@@ -96,4 +110,5 @@ public class UserController implements PhaseListener{
 	public PhaseId getPhaseId() {
 		return PhaseId.RENDER_RESPONSE;
 	}
+
 }
